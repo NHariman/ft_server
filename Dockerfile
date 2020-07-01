@@ -48,7 +48,7 @@ RUN service mysql start &&\
 	mysql phpmyadmin < var/www/html/phpmyadmin/sql/create_tables.sql &&\
 	chmod +x /srcs/wp-cli.phar &&\
 	mv srcs/wp-cli.phar /usr/local/bin/wp &&\
-	wp core install --url="localhost/wordpress"  --title="ft_server" --admin_user="nhariman" --admin_password="codam42born2code" --admin_email="nhariman@student.codam.nl" --allow-root --path="var/www/html/wordpress" &&\
+	wp core install --url="https://localhost/wordpress"  --title="ft_server" --admin_user="nhariman" --admin_password="codam42born2code" --admin_email="nhariman@student.codam.nl" --allow-root --path="var/www/html/wordpress" &&\
 	wp core update --allow-root --path="var/www/html/wordpress"
 
 #set ownerships
