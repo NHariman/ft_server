@@ -1,7 +1,7 @@
 # HOW TO USE DOCKERFILES.
 # 1. BUILD THE IMAGE. DEFAULT:
 # docker build -t ft_server .
-# TO CHANGE:
+# CHANGABLE VARIABLES WTIH --build-arg argument:
 # - admin username (admin_user)
 # - password (admin_pw)
 # - email (admin_email)
