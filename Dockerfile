@@ -19,11 +19,13 @@
 # TO CHECK AUTOINDEX: localhost/wordpress/wp-includes
 # OPTIONAL: REBUILD WITH NO-CACHE
 # docker docker build -t ft_server . --no-cache
+# TO CHECK IF ONLY ONE CONTAINER IS RUNNING:
+# docker ps
 
 FROM debian:buster
 LABEL maintainer=nhariman email=<nhariman@student.codam.nl>
 
-#install and download everything necessary, also move them to the right places
+#install and download everything necessary
 RUN apt-get update && \
 	apt install -y \
 	nginx \
@@ -49,7 +51,7 @@ RUN apt-get update && \
 #Copy all necessary configuration files
 COPY /srcs/ ./srcs/
 
-#get wordpress and phpmyadmin
+#get wordpress and phpmyadmin and move them to the place where nginx makes websites
 RUN tar -xvzf srcs/wordpress-5.4.2.tar.gz &&\
 	mv wordpress/ var/www/html/ &&\
 	tar -xvzf srcs/phpMyAdmin-5.0.2-all-languages.tar.gz &&\
@@ -66,7 +68,7 @@ RUN	mv srcs/default /etc/nginx/sites-available/ &&\
 #set wp and phpmyadmin defaults, these can be changed during build by using 
 # --build-arg <arg_name>=<input>
 #default values are provided in case no arguments are given. 
-#Keep in mind, you have to use --buuild-arg for every variable you want to change
+#Keep in mind, you have to use --build-arg for every variable you want to change
 ARG admin_user=nhariman
 ARG admin_pw=codam42born2code
 ARG admin_email=nhariman@student.codam.nl
