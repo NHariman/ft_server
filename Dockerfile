@@ -69,9 +69,9 @@ RUN	mv srcs/default /etc/nginx/sites-available/ &&\
 # --build-arg <arg_name>=<input>
 #default values are provided in case no arguments are given. 
 #Keep in mind, you have to use --build-arg for every variable you want to change
-ARG admin_user=nhariman
-ARG admin_pw=codam42born2code
-ARG admin_email=nhariman@student.codam.nl
+ARG admin_user=user
+ARG admin_pw=pw
+ARG admin_email=user@email.com
 
 #setup mysql, phpmyadmin and wp database, for wp & PhpMyAdmin
 #defaults: 
