@@ -4,11 +4,18 @@
 docker build -t ft_server .
 # Run image
 #docker run -it -p 80:80 -p 443:443 ft_server
-#website: https://localhost/ybakker/
+
+#other handy docker commands:
+- this command allows you to copy files from the docker container to your local environment
+docker cp <containerID>:/path/to/file file_location_You_want_to_copy_to
+
+# reset docker on codam mac
 #mkdir -p ~/goinfre/docker
 #rm -rf ~/Library/Containers/com.docker.docker
 #ln -s ~/goinfre/docker ~/Library/Containers/com.docker.docker
+
 #docker run -it --rm debian bash
+
 #docker exec
 #https://localhost/wp-admin/
 #localhost
